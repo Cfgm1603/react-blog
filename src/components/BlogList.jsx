@@ -28,9 +28,12 @@ function BlogList() {
                 <div className="containerBL">
 
                     <div className="containerL">
-                        
                     <Link className='ButtonTitle' style={{textDecoration: 'none'}} to="/BlogPost">
                         <MovieCard movie = {movie}></MovieCard> </Link>
+                        <MovieCard movie = {movie}></MovieCard>
+                        <MovieCard movie = {movie}></MovieCard>
+                        <MovieCard movie = {movie}></MovieCard>
+                        <MovieCard movie = {movie}></MovieCard>
                     
                     </div>
 

@@ -16,31 +16,31 @@ function Home() {
       }
     };
     
-    const getData = (title) => {
-      setLoading(true);
-      debugger;
+    // const getData = (title) => {
+    //   setLoading(true);
+    //   debugger;
       
-        console.log('fetching...')
-        const response =  fetch('https://ott-details.p.rapidapi.com/search?title='+title, options);
-        const data = response.json();
-        debugger;
-        if(data) {  setMovies(data);
-                    setLoading(false); 
-                    setHasFetched(true); }
+    //     console.log('fetching...')
+    //     const response =  fetch('https://ott-details.p.rapidapi.com/search?title='+title, options);
+    //     const data = response.json();
+    //     debugger;
+    //     if(data) {  setMovies(data);
+    //                 setLoading(false); 
+    //                 setHasFetched(true); }
   
       
-    }
+    // }
     
-    useEffect (() => {
+    // useEffect (() => {
 
       // if(movies.length > 0) {
       //   return;
       // }
      
-      const x = getData('avengers');
+    //   const x = getData('avengers');
       
-      console.log(x)
-    }, [movies])
+    //   console.log(x)
+    // }, [movies])
 
 
 
