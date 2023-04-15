@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState }from 'react';
 
 //Navegación entre las paginas
-import { BrowserRouter as Router, Routes, Route, Navigate, json} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, json } from "react-router-dom";
 
 import './App.css';
 
@@ -12,6 +12,7 @@ import BlogList from './components/BlogList';
 import BlogPost from './BlogPost';
 
 function App() {
+  
 
     return (
       <>
