@@ -13,7 +13,6 @@ import BlogPost from './BlogPost';
 
 function App() {
   
-
     return (
       <>
       <Router>

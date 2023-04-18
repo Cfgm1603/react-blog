@@ -1,25 +1,26 @@
-import React , { useState }from 'react';
+import React , { useState, useEffect }from 'react';
 import { Link } from "react-router-dom";
 
+const MovieCard = ({ movie, image }) => {
+    const id = movie.id
+    
 
-const MovieCard = ({ movie },{image}) => {
     return (    
-        
-        
         <div className="movie">
-            <Link className='ButtonTitle' style={{textDecoration: 'none'}} to="/BlogPost">
+
+            
+            
             <div>
                 <p>{movie.year}</p>
             </div>
             <div>
                 
-                <img src={movie.Poster !== 'N/A'? movie.Poster : 'https://via.placerholder.com/400'} alt={image.url}/>
             </div>
             <div>
-                <span>{movie.Type}</span>
+                <span>{movie.titleType}</span>
                 <h3>{movie.title}</h3>
             </div>
-            </Link>
+            
         </div>
 
 
