@@ -42,13 +42,13 @@ function BlogPost (  ){
         <div>
         <Navbar></Navbar>
 
-             <div className="container">
+             <div className='loader' >
                         
                         {
                             loading ? 
                             <LoadingSpinner/>
                             :
-                            <div >
+                            <div className="container" >
                                 <div>
                                     <h1>{movies.Title}</h1>
                                 </div>

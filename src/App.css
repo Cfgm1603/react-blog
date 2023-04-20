@@ -170,8 +170,12 @@ h1 {
   .movie:hover div:nth-of-type(1) {
     opacity: 1;
   }
-  
-
+  .loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
   .containerL {
     width: 100%;
     margin-top: 3rem;
@@ -264,8 +268,8 @@ h1 {
 .search-bar {
   display: flex;
   align-items: center;
-  height: 200px;
-  font-size:14pt; 
+  height: 10px;
+  font-size:40pt; 
 }
 
 .nav-right {

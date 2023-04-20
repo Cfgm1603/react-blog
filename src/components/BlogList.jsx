@@ -99,8 +99,7 @@ function BlogList() {
                     onClick={() => updateMovies(searchTerm)}>  </button>
                 </div>
                 
-                <div style={'display: flex;
-  align-items: center;}><h1 className="web-name">Movies with the title: {title}</h1></div>
+                <div><h1 className="web-name">Movies with the title: {title}</h1></div>
 
                 </div>
 
