@@ -1,8 +1,8 @@
 import React , { useState, useEffect }from 'react';
 import { Link } from "react-router-dom";
 
-const MovieCard = ({ movie, image }) => {
-    const id = movie.id
+const MovieCard = ({ movie }) => {
+    
     
 
     return (    
@@ -11,14 +11,15 @@ const MovieCard = ({ movie, image }) => {
             
             
             <div>
-                <p>{movie.year}</p>
+                <p>{movie.Year}</p>
+            </div>
+            <div>
+                <img className='image' src={movie.Poster} />
             </div>
             <div>
                 
-            </div>
-            <div>
-                <span>{movie.titleType}</span>
-                <h3>{movie.title}</h3>
+                <span>{movie.Type}</span>
+                <h3>{movie.Title}</h3>
             </div>
             
         </div>
