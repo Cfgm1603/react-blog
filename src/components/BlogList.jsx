@@ -9,8 +9,8 @@ function BlogList() {
     const [movies, setMovies] = useState([]);
     const [le, setLe] = useState(0);
     const [loading, setLoading] = useState(true)
+    const [update, setUpdate] = useState(false)
     const [capture, setCapture] = useState(false)
-    
     
     const [title, setTitle] = useState('Avengers');
     const [mov, setMov] = useState([]);
@@ -20,6 +20,13 @@ function BlogList() {
     const [check, setCheck] = useState(true)
     const [searchTerm, setSearchTerm] = useState('');
 
+    const defTitle = () => {
+        if(update==true){
+            setTitle()
+        }
+
+    }
+ 
     
     const getData =  async(title) => {
 
@@ -54,12 +61,22 @@ function BlogList() {
      
         
       const updateMovies = (searchTerm) => {
-        debugger
-        setLoading(true)
-        setCheck(true)
-        setMovies([])
-        getData(searchTerm)
-        setTitle(searchTerm)
+
+        if(searchTerm==''){
+
+            setLe(0)
+
+        }else{
+            
+            setUpdate(true)
+            setLoading(true)
+            setCheck(true)
+            setMovies([])
+            getData(searchTerm)
+            setTitle(searchTerm)
+        }
+        
+        
         
 
       }
@@ -76,20 +93,22 @@ function BlogList() {
             setLoading(false)
             console.log(movies.Search)
 
+
         }   
       }
       
         
     
     return (
-      
+
         <div>
              <Navbar  />
             
-                <div className="containerL">
+                <div >
                     <div>
-                <div className="search-bar">
-                    <input type="text" 
+                        <div className="containerL">
+                    <div className='imagePo' >
+                    <input className="search-bar" type="text" 
                     placeholder="Search for movies"
                     value={searchTerm}
                     onChange={(e)=> setSearchTerm(e.target.value)}/>
@@ -97,15 +116,19 @@ function BlogList() {
                     <button type="submit" 
                     alt="search"
                     onClick={() => updateMovies(searchTerm)}>  </button>
+                    </div>
+                        </div>
+                <div>
+                    <h1 className="web-name">Movies with the title: {title}</h1>
                 </div>
                 
-                <div><h1 className="web-name">Movies with the title: {title}</h1></div>
-
                 </div>
 
+                <div className="containerL" >
 
                 <List loading = { loading } le = { le } mov = { mov } ></List>
-                     
+                
+                </div>   
 
                 </div>    
                     

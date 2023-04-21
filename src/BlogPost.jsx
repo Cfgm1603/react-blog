@@ -3,6 +3,9 @@ import { useLocation } from "react-router-dom";
 import LoadingSpinner from "./components/Loading";
 import Navbar from "./components/Navbar";
 
+ 
+import { addToFirebase } from "./Helpers/firebaseHelpers";
+
 
 function BlogPost (  ){
 
@@ -12,6 +15,13 @@ function BlogPost (  ){
         //Trae la id de la pelicula
         const location = useLocation();
         const state = location.state
+
+        const addFavorite = async (name, description) => {
+            addToFirebase(
+              { objectToSave: { name, description } },
+              "PruebaFavoritos"
+            );
+          };
         
 
         const fetchNew =  async() => {
@@ -84,7 +94,7 @@ function BlogPost (  ){
                                 </div>
                                 
                                 
-                                
+                                <button onClick={() => addFavorite(movies.Title, movies.Poster)}>Add Favorite</button>
                                 
                                 
                             </div>

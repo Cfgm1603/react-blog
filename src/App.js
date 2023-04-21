@@ -5,16 +5,21 @@ import { BrowserRouter as Router, Routes, Route, Navigate, json } from "react-ro
 
 import './App.css';
 
+
+
 //Importamos las paginas que vamos a utilizar
 import Layout from './layout';
 import Home from './home';
 import BlogList from './components/BlogList';
 import BlogPost from './BlogPost';
 
+import FavoriteView from './components/favoriteView';
+
 function App() {
   
     return (
       <>
+      <FavoriteView></FavoriteView>
       <Router>
       <Routes>
         //Layout le da la estructura base a todas las paginas
