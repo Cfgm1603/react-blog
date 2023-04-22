@@ -1,26 +1,30 @@
 import LoadingSpinner from "./Loading";
-import MovieCard from "../MovieCard";
-import { Link } from "react-router-dom";
+import MovieF from "./MovieF"
+//import MovieCard from "../MovieCard";
 
-const MovieList = ( {loading, le, mov} ) => {
+const ListFW = ( {le, loading, type, fav} ) => {
 
     return (
+
+        
         <div className="containerL">
+            
 
                         
                         {
+                            
                             loading ? 
                             <LoadingSpinner/>
                             :
+                            
                             <div >
-                                {le !== 0 ? (
+                                {
+                                le !== 0 ? (
                                     <div className='containerL'>
-                                    {mov.map((moviee) => 
+                                    {fav.map((moviee) => 
                                         
-                                        <Link className='ButtonTitle' style={{textDecoration: 'none'}} to={"/BlogPost"} state = { moviee.imdbID }>
-                                            <MovieCard movie={moviee}/></Link>
-                                        
-                                        
+                                        <MovieF movie={moviee}  type = {type}/>
+                                         
                                     )}
                                     </div>
                                 ) : (
@@ -38,4 +42,4 @@ const MovieList = ( {loading, le, mov} ) => {
     )
 
 }
-export default MovieList;
+export default ListFW;

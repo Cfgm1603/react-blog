@@ -178,7 +178,7 @@ h1 {
   }
   .containerL {
     width: 100%;
-    margin-top: 3rem;
+    margin-top: 1rem;
   
     display: flex;
     justify-content: center;
@@ -326,10 +326,116 @@ h1 {
 }
 
 .imagePo {
+  display: inline-block;
+  
+  
+}
+
+.contentP {
+  padding: 20px;
   display: inline-block
 }
 
-.content {
+
+/* Favorites und Watch Later */
+
+.containerF{
+  margin: 1.5rem;
+  background-color: #3c4553;
+  height: 250px;
+  width: 600px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.imageF {
+  
+  height: 250px
+}
+
+.imgCont{
+  float:left;
+
+}
+
+.contentL{
+  float: right;
+  align-items: center;
+  top: 1%;
+  position: absolute;
   padding: 20px;
   display: inline-block
+}
+.button-812{
+  
+    background-color: #ffffff;
+    border: 0 solid #ffffff;
+    border-radius: 2rem;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 1rem 3.5rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(84, 87, 95, 0.25);
+    user-select: none;
+    position: relative;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  
+}
+.buttontitle:hover{
+  color: white;
+}
+
+.button-812:hover {
+background-color: #000000;
+color: #ffffff;
+}
+
+.button-8123{
+  background-color: #fff;
+  border: 0 solid #ffffff;
+  border-radius: 0.8rem;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.55rem 1.3rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(84, 87, 95, 0.25);
+  user-select: none;
+  position: relative;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  
+
+}
+.buttontitle:hover{
+color: white;
+}
+
+.button-8123:hover {
+background-color: #000000;
+color: #ffffff;
 }

@@ -13,7 +13,7 @@ const FavoriteView = () => {
       "PruebaFavoritos"
     );
   };
- 
+  
   const getFavorite = async () => {
     getFromFirebase(
 

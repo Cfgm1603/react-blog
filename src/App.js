@@ -12,14 +12,16 @@ import Layout from './layout';
 import Home from './home';
 import BlogList from './components/BlogList';
 import BlogPost from './BlogPost';
+import Favorites from './components/Favorites';
+import Watch from './components/Watch';
 
-import FavoriteView from './components/favoriteView';
+
 
 function App() {
   
     return (
       <>
-      <FavoriteView></FavoriteView>
+      
       <Router>
       <Routes>
         //Layout le da la estructura base a todas las paginas
@@ -28,7 +30,9 @@ function App() {
           <Route index element={<Home/>} />
           //Ahora se indica que el tag bloglist va a ser la pagina BlogList
           <Route path="bloglist" element={<BlogList />} />
+          <Route path="favorites" element={<Favorites />} />
           <Route path="blogpost" element={<BlogPost />} />
+          <Route path="watch" element={<Watch />} />
         </Route>
       </Routes>
     </Router>

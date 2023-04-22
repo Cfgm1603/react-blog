@@ -107,28 +107,31 @@ function BlogList() {
                 <div >
                     <div>
                         <div className="containerL">
-                    <div className='imagePo' >
-                    <input className="search-bar" type="text" 
-                    placeholder="Search for movies"
-                    value={searchTerm}
-                    onChange={(e)=> setSearchTerm(e.target.value)}/>
-                    
-                    <button type="submit" 
-                    alt="search"
-                    onClick={() => updateMovies(searchTerm)}>  </button>
-                    </div>
+                            <div className='imagePo' >
+                                <input className="search-bar" type="text" 
+                                placeholder="Try typing a movie!"
+                                value={searchTerm}
+                                onChange={(e)=> setSearchTerm(e.target.value)}
+                                style={{float:"left"}}
+                                /> 
+                                
+                                <button className='button-8123' type="submit" 
+                                alt="search"
+                                onClick={() => updateMovies(searchTerm)}
+                                style={{float:"right"}}> Search  </button>
+                            </div>
                         </div>
-                <div>
-                    <h1 className="web-name">Movies with the title: {title}</h1>
-                </div>
+                        <div>
+                            <h1 className="web-name">Movies with the title: {title}</h1>
+                        </div>
                 
-                </div>
+                    </div>
 
-                <div className="containerL" >
+                    <div className="containerL" >
 
-                <List loading = { loading } le = { le } mov = { mov } ></List>
-                
-                </div>   
+                        <List loading = { loading } le = { le } mov = { mov } ></List>
+                        
+                    </div>   
 
                 </div>    
                     

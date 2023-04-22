@@ -14,19 +14,20 @@ function BlogPost (  ){
 
         //Trae la id de la pelicula
         const location = useLocation();
-        const state = location.state
+        const id = location.state
 
-        const addFavorite = async (name, description) => {
+        const addToFB = async (imbdid, title, poster, type) => {
+            debugger
             addToFirebase(
-              { objectToSave: { name, description } },
-              "PruebaFavoritos"
+              { objectToSave: { id, title, poster } },
+              type
             );
-          };
+        };
         
-
+ 
         const fetchNew =  async() => {
 
-            const url = `http://www.omdbapi.com/?i=${state}&plot=full&apikey=4c3f3840`
+            const url = `http://www.omdbapi.com/?i=${id}&plot=full&apikey=4c3f3840`
             const response = await fetch(url)
             const responseJ = await response.json()    
             if(Object.keys(responseJ).length==0){
@@ -53,7 +54,6 @@ function BlogPost (  ){
         <Navbar></Navbar>
 
              <div className='loader' >
-                        
                         {
                             loading ? 
                             <LoadingSpinner/>
@@ -68,10 +68,9 @@ function BlogPost (  ){
                                         <img src={movies.Poster}></img>
                                     </div>
                                     
-                                    <div className='content'>
+                                    <div className='contentP'>
                                         <h3>Year: <i>{ movies.Year }</i>  </h3> 
                                         <h3>Duration: <i>{ movies.Runtime}</i>  </h3> 
-                                        
                                         
 
                                         <h3>Synopsis:</h3>
@@ -94,8 +93,11 @@ function BlogPost (  ){
                                 </div>
                                 
                                 
-                                <button onClick={() => addFavorite(movies.Title, movies.Poster)}>Add Favorite</button>
-                                
+                                <div style={{width: 900}}>
+                                <button className='button-81' style={{float:'left'}}  onClick={() => addToFB(movies.imbdid ,movies.Title, movies.Poster, "Favorites" )} >Add to Favorites</button>
+                               
+                                <button className='button-81'  style={{float:'right'}} onClick={() => addToFB(movies.imbdid ,movies.Title, movies.Poster,"Watch-Later" )}>Add to watch later</button>
+                                </div>
                                 
                             </div>
                         }

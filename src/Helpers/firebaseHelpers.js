@@ -2,7 +2,7 @@ import { collection, doc, getDocs, addDoc, updateDoc, deleteDoc } from "firebase
 import {db} from '../firebase';
  
 const addToFirebase = async ({ objectToSave }, collectionName) => {
-  try {
+  try { 
     const docRef = await addDoc(collection(db, collectionName), objectToSave);
     console.log(
       "Document written to table " + collectionName + " with ID: ",
@@ -14,7 +14,7 @@ const addToFirebase = async ({ objectToSave }, collectionName) => {
 };
  
 const getFromFirebase = async (collectionName) => {
-    try {debugger
+    try {
       const querySnapshot = await getDocs(collection(db, collectionName));
       const data = [];
       querySnapshot.forEach((doc) => {

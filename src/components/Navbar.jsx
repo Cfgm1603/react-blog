@@ -7,7 +7,6 @@ import { faArrowDownUpLock } from "@fortawesome/free-solid-svg-icons";
 export default function Navbar() { 
 
     
-    
     const path = window.location.pathname
     
     return (
@@ -22,6 +21,9 @@ export default function Navbar() {
             <div className="nav-right">
             <ul>
                 <CustomLink to= "/bloglist">Bloglist</CustomLink>
+                <CustomLink to= "/favorites">Favorites</CustomLink>
+                <CustomLink to= "/watch">Watch later</CustomLink>
+                
             </ul>
             </div>
         </nav>

@@ -35,7 +35,7 @@ function Home() {
                 <h1 onMouseOver={AnimatedText} id='Title' className='Title' data-value="CRITICS CORNER">CRITICS CORNER</h1>
 
                 <button className='button-81' onClick={() => {window.location.href = "/BlogList";}}>
-                    <Link className='ButtonTitle' style={{textDecoration: 'none', color: 'black'}} to="/BlogList">Directo a la lista del Blogs!</Link>
+                    <Link className='ButtonTitle' style={{textDecoration: 'none', color: 'black'}} to="/BlogList">Let's go to Bloglist!</Link>
                 </button>
                 </div>
                 
