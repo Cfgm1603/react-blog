@@ -5,8 +5,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate, json } from "react-ro
 
 import './App.css';
 
-
-
 //Importamos las paginas que vamos a utilizar
 import Layout from './layout';
 import Home from './home';

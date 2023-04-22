@@ -30,10 +30,7 @@ const MovieList = ( {loading, le, mov} ) => {
                                 )}
                             </div>
                         }
-
-                        
-                        
-                    
+ 
                     </div>
     )
 

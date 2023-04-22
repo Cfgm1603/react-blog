@@ -4,6 +4,8 @@ import Navbar from "./Navbar";
 
 import List from "./List"
 
+
+
 function BlogList() {
 
     const [movies, setMovies] = useState([]);
@@ -74,6 +76,7 @@ function BlogList() {
             setMovies([])
             getData(searchTerm)
             setTitle(searchTerm)
+            
         }
         
         

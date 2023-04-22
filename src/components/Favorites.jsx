@@ -43,6 +43,7 @@ function Favorites (){
 
 
         }   
+    }
         
       
 return (
@@ -57,6 +58,6 @@ return (
         </div>   
     </div>
         )
-}
+
 }
 export default Favorites;

@@ -1,13 +1,14 @@
 import React,{ useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import LoadingSpinner from "./components/Loading";
-import Navbar from "./components/Navbar";
-
- 
+import Navbar from "./components/Navbar"; 
 import { addToFirebase } from "./Helpers/firebaseHelpers";
 
 
+
 function BlogPost (  ){
+
+        
 
         const [movies, setMovies] = useState([]);
         const [loading, setLoading] = useState(true)
@@ -17,11 +18,18 @@ function BlogPost (  ){
         const id = location.state
 
         const addToFB = async (imbdid, title, poster, type) => {
-            debugger
-            addToFirebase(
+            
+            const res = await addToFirebase(
               { objectToSave: { id, title, poster } },
               type
             );
+            
+
+            if(res!='') {
+                alert("The movie has been added to " + type)
+            }
+            
+
         };
         
  
@@ -59,6 +67,7 @@ function BlogPost (  ){
                             <LoadingSpinner/>
                             :
                             <div className="container" >
+                               
                                 <div>
                                     <h1>{movies.Title}</h1>
                                 </div>

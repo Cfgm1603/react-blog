@@ -1,7 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {Link,useMatch,useResolvedPath} from "react-router-dom";
-import { useState, useEffect } from "react";
-import { faArrowDownUpLock } from "@fortawesome/free-solid-svg-icons";
+
 
 
 export default function Navbar() { 
