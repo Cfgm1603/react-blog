@@ -1,16 +1,44 @@
-import React,{ useState, useEffect } from 'react';
+import React,{ useState, useEffect, useContext } from 'react';
 import { useLocation } from "react-router-dom";
+//Import components
 import LoadingSpinner from "./components/Loading";
 import Navbar from "./components/Navbar"; 
-import { addToFirebase } from "./Helpers/firebaseHelpers";
+import TopMovies from './components/topMovies';
+//Import functions 
+import { addToFirebase, getFromFirebase } from "./Helpers/firebaseHelpers";
+
+//import context
+import { MovieFWContext } from './MoviesFWContext';
+
 
 
 
 function BlogPost (  ){
 
-        
+    const {favo, setFavo, watch, setWatch} = useContext(MovieFWContext)
+    
+
+       
+
+
+        const updateF = async(type) => {
+            //Fetches FAVORITE data from Firebase
+                    
+            const data = await getFromFirebase(
+                type
+            );
+
+            if(data.length!=0){
+                if(type==="Favorites"){
+                  setFavo(data)
+                }else{
+                  setWatch(data)
+                }
+              }
+        }
 
         const [movies, setMovies] = useState([]);
+        const [count, setCount] = useState([]);
         const [loading, setLoading] = useState(true)
 
         //Trae la id de la pelicula
@@ -28,6 +56,9 @@ function BlogPost (  ){
             if(res!='') {
                 alert("The movie has been added to " + type)
             }
+            
+            await updateF(type)
+            console.log(favo)
             
 
         };
@@ -54,7 +85,7 @@ function BlogPost (  ){
             fetchNew()
     
           }, [])
-          console.log(movies)
+          
     
     return (
         
@@ -93,10 +124,6 @@ function BlogPost (  ){
 
                                       
                                       <h3>Genre: <i>{ movies.Genre}</i>  </h3> 
-
-
-                                    
-
                                         
                                     </div>
                                 </div>
@@ -106,6 +133,29 @@ function BlogPost (  ){
                                 <button className='button-81' style={{float:'left'}}  onClick={() => addToFB(movies.imbdid ,movies.Title, movies.Poster, "Favorites" )} >Add to Favorites</button>
                                
                                 <button className='button-81'  style={{float:'right'}} onClick={() => addToFB(movies.imbdid ,movies.Title, movies.Poster,"Watch-Later" )}>Add to watch later</button>
+                                </div>
+                                <br /><br /><br />  
+                                <div >
+                                <div style={{float:'left'}} className='favorites'> 
+                                    <h3>Top liked movies:</h3>
+                                    {favo.map((moviee, index) => {
+                                        if (index < 5) {
+                                            return <TopMovies movie={moviee} />;
+                                        }
+                                        return null;
+                                    })}
+                                </div>
+
+                                <div className='favorites' style={{float:'right'}}> 
+                                    <h3>Top liked movies:</h3>
+                                    {watch.map((moviee, index) => {
+                                        if (index < 5) {
+                                            return <TopMovies movie={moviee} />;
+                                        }
+                                        return null;
+                                    })}
+                                </div>
+                                
                                 </div>
                                 
                             </div>

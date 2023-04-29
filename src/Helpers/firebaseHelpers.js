@@ -1,6 +1,6 @@
 import { collection, doc, getDocs, addDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import {db} from '../firebase';
- 
+
 const addToFirebase = async ({ objectToSave }, collectionName) => {
   try { 
     const docRef = await addDoc(collection(db, collectionName), objectToSave);

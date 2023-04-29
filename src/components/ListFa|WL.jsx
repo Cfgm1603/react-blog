@@ -9,8 +9,6 @@ const ListFW = ( {le, loading, type, fav} ) => {
         
         <div className="containerL">
             
-
-                        
                         {
                             
                             loading ? 

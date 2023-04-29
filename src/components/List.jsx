@@ -7,7 +7,6 @@ const MovieList = ( {loading, le, mov} ) => {
     return (
         <div className="containerL">
 
-                        
                         {
                             loading ? 
                             <LoadingSpinner/>
@@ -19,7 +18,6 @@ const MovieList = ( {loading, le, mov} ) => {
                                         
                                         <Link className='ButtonTitle' style={{textDecoration: 'none'}} to={"/BlogPost"} state = { moviee.imdbID }>
                                             <MovieCard movie={moviee}/></Link>
-                                        
                                         
                                     )}
                                     </div>
