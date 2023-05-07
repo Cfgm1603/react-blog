@@ -1,3 +1,4 @@
+import React from 'react';
 import LoadingSpinner from "./Loading";
 import MovieF from "./MovieF"
 //import MovieCard from "../MovieCard";

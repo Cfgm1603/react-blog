@@ -2,6 +2,8 @@ import React , { useEffect, useState } from 'react';
 
 import Navbar from "./Navbar";
 
+import Profile from './Profile';
+
 import List from "./List"
 
 
@@ -108,9 +110,10 @@ function BlogList() {
              <Navbar  />
             
                 <div >
+                  
                     <div>
                         <div className="containerL">
-                            <div className='imagePo' >
+                            <div className='imagePo' style={{ display: 'flex', gap: '10px' }}>
                                 <input className="search-bar" type="text" 
                                 placeholder="Try typing a movie!"
                                 value={searchTerm}
