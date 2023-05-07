@@ -41,32 +41,26 @@ function Home() {
           CRITICS CORNER
         </h1>
         <Profile></Profile>
-        <div style={{ display: 'flex', gap: '30px' }}>
-          
-            <LoginButton></LoginButton>
+        <div style={{ display: "flex", gap: "30px" }}>
+          <LoginButton></LoginButton>
 
-            <LogoutButton></LogoutButton>
-          
-          
-            <button
-              className="button-81"
-              onClick={() => {
-                window.location.href = "/bloglist";
-              }}
+          <LogoutButton></LogoutButton>
+
+          <button
+            className="button-81"
+            onClick={() => {
+              window.location.href = "/bloglist";
+            }}
+          >
+            <Link
+              className="ButtonTitle"
+              style={{ textDecoration: "none", color: "black" }}
+              to="/bloglist"
             >
-              <Link
-                className="ButtonTitle"
-                style={{ textDecoration: "none", color: "black" }}
-                to="/bloglist"
-              >
-                Let's go to Bloglist!
-              </Link>
-            </button>
-            
-          
+              Let's go to Bloglist!
+            </Link>
+          </button>
         </div>
-
-        
       </div>
     </div>
   );
