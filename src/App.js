@@ -21,6 +21,7 @@ import BlogList from "./components/BlogList";
 import BlogPost from "./BlogPost";
 import Favorites from "./components/Favorites";
 import Watch from "./components/Watch";
+import Create from "./components/Create";
 
 import { MovieFWContext } from "./MoviesFWContext";
 
@@ -60,6 +61,7 @@ function App() {
               <Route path="favorites" element={<Favorites />} />
               <Route path="blogpost" element={<BlogPost />} />
               <Route path="watch" element={<Watch />} />
+              <Route path="create" element={<Create />} />
             </Route>
           </Routes>
         </Router>

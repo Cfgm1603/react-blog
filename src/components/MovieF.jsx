@@ -9,7 +9,7 @@ const MovieF = ({ movie, type }) => {
   const [title, setTitle] = useState([]);
 
   const updateF = async () => {
-    const tit = prompt("Please enter your name", movie.title).toString();
+    const tit = prompt("Please enter the new name:", movie.title).toString();
     setTitle(tit);
 
     const id = movie.id;
@@ -37,16 +37,16 @@ const MovieF = ({ movie, type }) => {
             <img className="imageF" src={movie.poster} />
           </div>
           <div className="contentL">
-            <h2>{movie.title}</h2>
+            <h2 className="text">{movie.title}</h2>
 
             <br />
             <br />
             <br />
             <br />
-            <div style={{ width: 390 }}>
+            <div className="buttons">
               <div>
                 <button
-                  className="button-812"
+                  className="button-812I"
                   style={{ float: "left" }}
                   onClick={deleteF}
                 >
@@ -54,13 +54,15 @@ const MovieF = ({ movie, type }) => {
                 </button>
               </div>
               <div>
-                <button
-                  className="button-812"
-                  style={{ float: "right" }}
-                  onClick={updateF}
-                >
-                  Update
-                </button>
+                {type !== "Create" ? (
+                  <button
+                    className="button-812I"
+                    style={{ float: "right" }}
+                    onClick={updateF}
+                  >
+                    Update
+                  </button>
+                ) : null}
               </div>
             </div>
           </div>

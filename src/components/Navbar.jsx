@@ -21,6 +21,7 @@ export default function Navbar() {
             <CustomLink to="/bloglist">Bloglist</CustomLink>
             <CustomLink to="/favorites">Favorites</CustomLink>
             <CustomLink to="/watch">Watch later</CustomLink>
+            <CustomLink to="/create">Create Movie</CustomLink>
           </div>
         </div>
       )}
@@ -42,6 +43,7 @@ export default function Navbar() {
           <CustomLink to="/bloglist">Bloglist</CustomLink>
           <CustomLink to="/favorites">Favorites</CustomLink>
           <CustomLink to="/watch">Watch later</CustomLink>
+          
         </ul> 
        : 
 
