@@ -32,7 +32,7 @@ function App() {
   const getFav = async (type) => {
     const data = await getFromFirebase(type);
 
-    if (data.length != 0) {
+    if (data) {
       if (type === "Favorites") {
         setFavo(data);
       } else {

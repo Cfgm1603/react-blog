@@ -26,6 +26,8 @@ h1 {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
 }
 .Title {
   color: white;
@@ -211,6 +213,7 @@ h1 {
   gap: 2rem;
   padding: 0 2rem;
   height: 80px;
+  width: 96%;
 }
 
 .web-name {
@@ -271,6 +274,7 @@ h1 {
 .search-bar {
   display: flex;
   align-items: center;
+  
 }
 
 .search-bar input {
@@ -312,7 +316,8 @@ h1 {
 }
 
 .imagePo {
-  display: inline-block;
+  flex: 0 0 auto;
+  margin-right: 20px;
 }
 
 .favorites {
@@ -331,12 +336,12 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  
 }
 
 .contentP {
-  padding: 20px;
-  display: inline-block;
-  width: 1500px;
+  flex: 1 1 auto;
+  
 }
 
 /* Favorites und Watch Later */
@@ -469,3 +474,155 @@ h1 {
   filter: blur(6px);
   pointer-events: none;
 }
+.wrapperList {
+  padding: 10px 30px 0px;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px;
+  z-index: 9999;
+  color: black;
+}
+.topLikedMovies {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown-content > * {
+  margin-bottom: 10px;
+}
+
+.wrapperButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: auto;
+  
+
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  
+}
+
+.inicialBut {
+  display: "flex";
+  gap: "40px"
+}
+
+
+
+@media (max-width: 400px) {
+
+  .navbar{
+    background-color: rgb(61, 61, 61);
+    display:flexbox;
+    color: white;
+    justify-content:center;
+    gap: 1rem;
+    height: 91px;
+    padding: 30px 0px 0px;
+    width: auto;
+
+  }
+  .search-bar {
+    width: 200px;
+  }
+
+  .search-bar button {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+  }
+
+  .container {
+    width: 350px;
+    padding-left: 7%;
+    margin-bottom: 50px;
+        
+  }
+  .contentP {
+    width: 340px;
+    padding: 0px;
+    
+    
+    
+    
+    
+  }
+  .post {
+    display:inline-block;
+  }
+
+  .wrapperContent{
+    position: relative;
+  }
+
+  .wrapperButtons {
+    
+    justify-content: space-between;
+  }
+
+  .contentWrapper {
+    display:contents;
+    align-items: center;
+    margin-bottom: 20px;
+    
+  }
+
+  .favorites {
+    height: fit-content;
+  }
+
+  .inicialBut {
+    gap: "10px"
+  }
+
+  .containerF {
+    margin: 1.5rem;
+    background-color: #3c4553;
+    height: 250px;
+    width: 350px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+  
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+    display: flex;
+  }
+  .containerL {
+    width: 100%;
+    margin-top: 1rem;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+
+  
+  
+  
+
+}
+

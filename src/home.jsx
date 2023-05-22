@@ -33,15 +33,16 @@ function Home() {
     <div className="container">
       <div className="principalTitle">
         <h1
-          onMouseOver={AnimatedText}
+          onMouseOver={(e) => window.innerWidth > 1344 ? AnimatedText(e) : null}
           id="Title"
           className="Title"
           data-value="CRITICS CORNER"
         >
           CRITICS CORNER
         </h1>
+
         <Profile></Profile>
-        <div style={{ display: "flex", gap: "30px" }}>
+        <div style={{ display: "flex", gap: "30px" }} className="inicialBut">
           <LoginButton></LoginButton>
 
           <LogoutButton></LogoutButton>

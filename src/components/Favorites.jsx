@@ -17,6 +17,7 @@ function Favorites() {
       setFavo(data);
     }
   };
+
   useEffect(() => {
     getFav();
   }, [fav]);
@@ -30,7 +31,9 @@ function Favorites() {
       setLe(favo.length);
       setCheck(false);
       setLoading(false);
+
       console.log(favo);
+      
     }
   }
 

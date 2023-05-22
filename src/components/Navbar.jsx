@@ -1,8 +1,33 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Navbar() {
   const path = window.location.pathname;
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const Dropdown = () => {
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const toggleDropdown = () => {
+      setIsOpen(!isOpen);
+    };
+  
+    return (
+      <div>
+      <img src="https://www.linkpicture.com/q/drop_3.png" style={{ width: '30px'}} onClick={toggleDropdown}/>
+        {isOpen && (
+        <div className="dropdown-container">
+          <div className="dropdown-content">
+            <CustomLink to="/bloglist">Bloglist</CustomLink>
+            <CustomLink to="/favorites">Favorites</CustomLink>
+            <CustomLink to="/watch">Watch later</CustomLink>
+          </div>
+        </div>
+      )}
+    </div>
+    );
+  };
+
 
   return (
     <nav className="navbar">
@@ -12,11 +37,17 @@ export default function Navbar() {
       <div className="nav-center"></div>
 
       <div className="nav-right">
-        <ul>
+      {windowWidth > 400 ?
+        <ul >
           <CustomLink to="/bloglist">Bloglist</CustomLink>
           <CustomLink to="/favorites">Favorites</CustomLink>
           <CustomLink to="/watch">Watch later</CustomLink>
-        </ul>
+        </ul> 
+       : 
+
+       <Dropdown/>
+       }
+        
       </div>
     </nav>
   );

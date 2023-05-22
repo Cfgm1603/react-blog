@@ -78,7 +78,7 @@ function BlogList() {
     <div>
       <Navbar />
 
-      <div>
+      <div className="wrapperList">
         <div>
           <div className="containerL">
             <div className="imagePo" style={{ display: "flex", gap: "10px" }}>
