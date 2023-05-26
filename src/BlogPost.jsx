@@ -13,7 +13,7 @@ import { MovieFWContext } from "./MoviesFWContext";
 import LoginButton from "./components/LoginButton";
 
 function BlogPost() {
-  console.log(MovieFWContext._currentValue.favo);
+  
 
   const { favo, setFavo, watch, setWatch } = useContext(MovieFWContext);
   const { isAuthenticated } = useAuth0();
